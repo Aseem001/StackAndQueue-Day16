@@ -1,9 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Queue.cs" company="Bridgelabz">
+//   Copyright © 2018 Company
+// </copyright>
+// <creator Name="Aseem Anand"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace StacksAndQueueUsingLinkedList
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
     class Queue
     {
         public Node front;
@@ -29,6 +34,21 @@ namespace StacksAndQueueUsingLinkedList
                 temp.next = newNode;                
             }            
             Console.WriteLine("{0} enqueued into the queue", value);
+        }
+
+        /// <summary>
+        /// UC 4 : Dequeues and removes the value at front.
+        /// </summary>
+        public void Dequeue()
+        {
+            if(this.front==null)
+            {
+                Console.WriteLine("Queue is empty");
+                return;
+            }
+            Node temp = this.front;
+            this.front = this.front.next;
+            Console.WriteLine("Dequeued value: "+temp.data);
         }
 
         /// <summary>
