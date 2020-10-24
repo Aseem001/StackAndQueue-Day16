@@ -71,7 +71,7 @@ namespace StacksAndQueueUsingLinkedList
         }
 
         /// <summary>
-        /// Displays this stack contents from top to bottom.
+        /// Displays the stack contents from top to bottom.
         /// </summary>
         public void Display()
         {
