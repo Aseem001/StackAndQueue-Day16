@@ -28,6 +28,49 @@ namespace StacksAndQueueUsingLinkedList
         }
 
         /// <summary>
+        /// Peeks the top element.
+        /// </summary>
+        public void PeekTopElement()
+        {
+            if(this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+            }
+            else
+            {
+                Console.WriteLine("Peek: {0} is in the top of the stack",this.top.data);
+            }
+        }
+
+        /// <summary>
+        /// Pops the top element.
+        /// </summary>
+        public void PopTopElement()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty, can't pop");
+            }
+            else
+            {
+                Console.WriteLine("Popped value is: "+this.top.data);
+                this.top = this.top.next;
+            }
+        }
+
+        /// <summary>
+        /// UC 2 : Performs Peek and Pop until stack becomes empty
+        /// </summary>
+        public void IsEmpty()
+        {
+            while(this.top!=null)
+            {
+                PeekTopElement();
+                PopTopElement();
+            }
+        }
+
+        /// <summary>
         /// Displays this stack contents from top to bottom.
         /// </summary>
         public void Display()
@@ -43,6 +86,7 @@ namespace StacksAndQueueUsingLinkedList
                     Console.Write(temp.data + " ");
                     temp = temp.next;
                 }
+                Console.WriteLine();
             }
         }
     }
